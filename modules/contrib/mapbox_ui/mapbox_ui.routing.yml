@@ -1,0 +1,7 @@
+mapbox_ui.config:
+  path: '/admin/config/mapbox_ui/config'
+  defaults:
+    _form: '\Drupal\mapbox_ui\Form\MapBoxConfigForm'
+    _title: 'MapBox UI Configuration'
+  requirements:
+    _permission: 'administer site configuration'

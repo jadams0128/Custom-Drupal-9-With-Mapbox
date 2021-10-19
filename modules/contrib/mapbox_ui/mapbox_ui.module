@@ -1,0 +1,31 @@
+<?php
+
+/**
+ * @file
+ * Mapbox_ui Module.
+ */
+
+/**
+ * Implements hook_help().
+ */
+function mapbox_ui_help($path, $arg) {
+  switch ($path) {
+    case 'admin/help#mapbox_ui':
+      $output = '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('This module allows you to create a MapBox block using user interface.') . '</p>';
+      return $output;
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function mapbox_ui_theme($existing, $type, $theme, $path) {
+  $templates = $path . '/templates/block';
+  $return['mapbox_ui_block'] = [
+    'template'       => 'mapbox-ui-block',
+    'render element' => 'elements',
+    'path'           => $templates,
+  ];
+  return $return;
+}

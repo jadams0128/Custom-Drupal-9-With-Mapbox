@@ -1,0 +1,33 @@
+# Schema for the configuration files of the mapbox_ui module.
+
+mapbox_ui.settings:
+  type: config_entity
+  label: 'Mapbox_ui settings'
+  mapping:
+    accessToken:
+      type: string
+      label: 'Access Token'
+    style:
+      type: string
+      label: 'Style'
+    longitude:
+      type: string
+      label: 'Longitude'
+    latitude:
+      type: string
+      label: 'Latitude'
+    markerLongitude:
+      type: string
+      label: 'MarkerLongitude'
+    markerLatitude:
+      type: string
+      label: 'MarkerLatitude'
+    popupText:
+      type: string
+      label: 'popupText'
+    zoom:
+      type: integer
+      label: 'zoom'
+    navigationControl:
+      type: boolean
+      label: 'navigationControl'

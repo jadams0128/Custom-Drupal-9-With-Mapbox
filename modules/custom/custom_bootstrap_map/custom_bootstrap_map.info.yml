@@ -1,0 +1,9 @@
+name: Custom Bootstrap Map
+description: This module adds the block for the Custom Bootstrap locations.
+package: Custom Bootstrap
+
+type: module
+core_version_requirement: ^8.8 || ^9
+
+libraries:
+  - 'custom_bootstrap_map/custom_bootstrap_map'

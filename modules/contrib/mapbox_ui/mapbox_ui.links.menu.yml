@@ -1,0 +1,6 @@
+mapbox_ui.mapbox_configuration:
+  title: 'MapBox UI configurations'
+  description: 'MapBox UI configurations .'
+  parent: system.admin_config_development
+  route_name: mapbox_ui.config
+  weight: 100

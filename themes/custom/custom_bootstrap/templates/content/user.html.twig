@@ -1,0 +1,103 @@
+{#
+/**
+ * @file
+ * Theme override to present all user data.
+ *
+ * This template is used when viewing a registered user's page,
+ * e.g., example.com/user/123. 123 being the user's ID.
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ *   print a subset such as 'content.field_example'. Fields attached to a user
+ *   such as 'user_picture' are available as 'content.user_picture'.
+ * - attributes: HTML attributes for the container element.
+ * - user: A Drupal User entity.
+ *
+ * @see template_preprocess_user()
+ */
+
+#}
+
+<div class="person-header white-text custom-block-title text-center mar-top-20 mar-bottom-20">
+  {{ user.field_name.value }}
+</div>
+
+<div class="people-container no-padding white-bg" {{ attributes }}>
+  <div class="people-header-image text-center">
+    {% if user.user_picture is not empty %}
+      <img src="{{ file_url(user.user_picture.entity.uri.value) }}">
+    {% else %}
+      <img src="/sites/default/files/default_images/no-person.png">
+    {% endif %}
+  </div>
+
+  <div class="person-meta padding-25">
+    {% if user.hasRole('student') %}
+    	<div class="col text-center">
+    		{% set email = user.mail.value %}
+    		<p class="person-info"><a href="mailto:{{ email }}" target="_blank">{{ email }}</a></p>
+    		
+    	</div>
+    	<div class="row justify-content-md-center">
+    		<div class="col-md-auto">
+	    		<h1>Aproved Tool List</h1>
+			    <ul>
+			    	{% for key,item in user.field_tools %}
+					    {% set lower_title = path('entity.node.canonical', {'node': item.target_id})|replace({'\/tool\/': '', '-': ' '})|title %}
+					    <li>{{ lower_title }}</li>
+					{% endfor %}
+			    </ul>
+    		</div>
+    	</div>
+	{% else %}
+		<table class="responsive-table striped">
+	      <tbody>
+	        <tr>
+	          <td>
+	            <h4>Title:</h4>
+	          </td>
+	          <td>
+	            <p class="person-info">{{ user.field_shop_title.value }}</p>
+	          </td>
+	        </tr>
+	        <tr>
+	          <td>
+	            <h4>Department:</h4>
+	          </td>
+	          <td>
+	            <p class="person-info">{{ user.field_department.value }}</p>
+	          </td>
+	        </tr>
+	        <tr>
+	          <td>
+	            <h4>Email:</h4>
+	          </td>
+	          <td>
+	            <p class="person-info">{{ user.mail.value }}</p>
+	          </td>
+	        </tr>
+	        <tr>
+	          <td>
+	            <h4>Phone:</h4>
+	          </td>
+	          <td>
+	            <p class="person-info">{{ user.field_phone.value }}</p>
+	          </td>
+	        </tr>
+	        <tr>
+	          <td>
+	            <h4>Location:</h4>
+	          </td>
+	          <td>
+	            <p class="person-info"><a href="{{ path('entity.node.canonical', {'node':  user.field_location.entity.id}) }}">{{ user.field_location.entity.title.value }}</a></p>
+	          </td>
+	        </tr>
+	      </tbody>
+	    </table>
+    {% endif %}
+  </div>
+</div>
+
+
+
+

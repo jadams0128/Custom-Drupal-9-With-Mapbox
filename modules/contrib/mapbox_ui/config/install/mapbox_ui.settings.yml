@@ -1,0 +1,9 @@
+accessToken: 'pk.eyJ1Ijoib3Vtb3VtYWQiLCJhIjoiY2p2ejk4ZG1zMG85eTQzcGJzbGVqandyMyJ9.LSHc_B3fA04Xtbdo8tum2g'
+style: 'mapbox://styles/oumoumad/cjvzaby660bk01cpo0xqq4xbe'
+longitude: '48.8818596'
+latitude: '2.2846539'
+markerLongitude: '48.8818596'
+markerLatitude: '2.2846539'
+popupText: "Hello, I'am Here"
+zoom: 8
+navigationControl: TRUE

@@ -1,0 +1,11 @@
+custom_bootstrap_map:
+  header: true
+  css:
+    theme:
+      assets/css/custom-bootstrap-map.css: {}
+      https://api.mapbox.com/mapbox-gl-js/v2.4.0/mapbox-gl.css : { type: external, minified: false }
+      https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css : { type: external, minified: false }
+  js:
+    assets/js/custom_bootstrap_map.js: {}
+    https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js : { type: external, minified: false }
+    https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js : { type: external, minified: false }

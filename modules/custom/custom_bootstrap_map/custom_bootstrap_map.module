@@ -1,0 +1,13 @@
+<?php
+
+
+/**
+ * Implements hook_theme().
+ */
+function custom_bootstrap_map_theme($existing, $type, $theme, $path) {
+  return [
+    'custom_bootstrap_map' => [
+    	'variables' => ['locations' => NULL, 'tools' => NULL]
+    ],
+  ];
+}

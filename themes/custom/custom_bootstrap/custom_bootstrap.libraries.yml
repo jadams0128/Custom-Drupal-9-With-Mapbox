@@ -1,0 +1,7 @@
+global-styling:
+  css:
+    theme:
+      css/style.css: {}
+      css/custom_bootstrap.css: {}
+  js:
+    js/custom.js: {}
